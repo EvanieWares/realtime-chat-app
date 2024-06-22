@@ -1,7 +1,14 @@
 import { Request, Response } from "express";
 import Message from "../models/messageModel";
 
-const getMessages = async (req: Request, res: Response) => {
+/**
+ * Retrieves all messages from the database and sends them as a JSON response.
+ *
+ * @param {Request} req - The request object.
+ * @param {Response} res - The response object.
+ * @return {Promise<void>} The function does not return anything.
+ */
+const getMessages = async (req: Request, res: Response): Promise<void> => {
   try {
     const messages = await Message.find().sort({ timeStamp: -1 });
     res.status(200).json(messages);
@@ -10,7 +17,14 @@ const getMessages = async (req: Request, res: Response) => {
   }
 };
 
-const postMessage = async (req: Request, res: Response) => {
+/**
+ * Posts a new message to the database.
+ *
+ * @param {Request} req - The request object.
+ * @param {Response} res - The response object.
+ * @return {Promise<void>} A promise that resolves when the message is saved.
+ */
+const postMessage = async (req: Request, res: Response): Promise<void> => {
   const { user, message } = req.body;
 
   try {
