@@ -5,7 +5,7 @@ import mongoose from "mongoose";
  * environment variables.
  *
  * @return {Promise<void>} This function does not return anything directly,
- * but logs connection status or errors.
+ *                        but logs connection status or errors.
  */
 const connectDB = async (): Promise<void> => {
   try {
