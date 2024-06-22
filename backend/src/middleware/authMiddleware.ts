@@ -11,14 +11,16 @@ interface AuthRequest extends Request {
  * @param {AuthRequest} req - The request object.
  * @param {Response} res - The response object.
  * @param {NextFunction} next - The next function in the middleware chain.
- * @return {void} If the token is valid, calls the next function in the middleware chain.
- *                If the token is not provided or is invalid, sends a 401 status with an error message.
+ * @return {void} If the token is valid, calls the next function in the
+ *                middleware chain. If the token is not provided or is invalid,
+ *                sends a 401 status with an error message.
  */
-const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction) => {
+const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction): void => {
   const token = req.header('x-auth-token');
 
   if (!token) {
-    return res.status(401).json({ message: 'No token, authorization denied' });
+    res.status(401).json({ message: 'No token, authorization denied' });
+    return;
   }
 
   try {
