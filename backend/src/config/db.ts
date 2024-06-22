@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
-const connectDB = async () => {
+/**
+ * Asynchronously connects to the MongoDB database using the provided
+ * environment variables.
+ *
+ * @return {Promise<void>} This function does not return anything directly,
+ * but logs connection status or errors.
+ */
+const connectDB = async (): Promise<void> => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI as string, {
       user: process.env.MONGO_USER,
