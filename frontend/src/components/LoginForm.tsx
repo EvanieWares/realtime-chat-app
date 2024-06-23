@@ -4,7 +4,7 @@ import { UserContext } from "../context/UserContext";
 import { login, register } from "../services/api";
 import "../styles/form.css";
 
-const Form: React.FC = () => {
+const LoginForm: React.FC = () => {
   const { setUser } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -49,7 +49,7 @@ const Form: React.FC = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Username"
+          placeholder="Password"
           required
         />
         <FaLock className="icon" />
@@ -66,4 +66,4 @@ const Form: React.FC = () => {
   )
 }
 
-export default Form
+export default LoginForm
