@@ -1,27 +1,50 @@
-.message-container {
+.chat-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url(../assets/real-chat-bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-box h1 {
+  color: var(--md-sys-color-tertiary);
+  padding: 20px;
+}
+
+.message-container-wrapper {
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+}
+
+.message-container-wrapper .message-container {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 0.7rem;
-  width: 600px;
+  width: 800px;
 }
 
-.message-container-wrapper {
-  max-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.message-input {
+.message-container-wrapper .message-input {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 1rem;
 }
 
-.message-input-box {
+.message-input .message-input-box {
   width: 100%;
   min-height: auto;
   line-height: 1.5rem;
@@ -34,21 +57,24 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  background: var(--md-sys-color-primary-container);
 }
 
-.message-input button {
-  margin: 10px;
-  padding: 15px;
-  background-color: #5b728a;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.message-input .send-icon {
+  color: var(--md-sys-color-tertiary);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 3rem;
+  margin: 20px 0 20px 20px;
+  transition: ease-in 0.1s;
 }
 
-.message-input button:hover {
-  background-color: #3e5566;
-  transition: ease-in 0.3s;
+.message-input .send-icon:hover {
+  color: var(--md-sys-color-on-tertiary-fixed-variant);
+}
+
+@media (width < 850px) {
+  .message-container-wrapper .message-container {
+    width: 90vw;
+    min-width: 400px;
+  }
 }
