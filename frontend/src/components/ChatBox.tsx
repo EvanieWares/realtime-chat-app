@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useChat from '../hooks/useChat';
 import Message from './Message';
+import { IoSend } from 'react-icons/io5';
 import '../styles/chat.css';
 
 const ChatBox: React.FC = () => {
@@ -50,7 +51,7 @@ const ChatBox: React.FC = () => {
           placeholder="Type your message..."
           rows={3}
         />
-        <button onClick={handleSendMessage}>Send</button>
+        <IoSend className="send-icon" onClick={handleSendMessage} />
       </div>
     </div>
   );
