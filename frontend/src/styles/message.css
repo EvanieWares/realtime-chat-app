@@ -71,3 +71,21 @@
 .options-menu li:hover {
   background-color: #f1f1f1;
 }
+
+@media (width < 450px) {
+  .message {
+    max-width: 90%;
+  }
+
+  .message strong {
+    font-size: .8rem;
+  }
+
+  .message p {
+    font-size: .9rem;
+  }
+
+  .message small {
+    font-size: .7rem;
+  }
+}
