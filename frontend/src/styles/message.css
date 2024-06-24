@@ -1,7 +1,8 @@
 .message {
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
@@ -10,12 +11,13 @@
 }
 
 .message.me {
-  background-color: #cce5ff;
+  background: var(--md-sys-color-inverse-primary);
+  color: var(--md-sys-color-on-inverse-primary);
   align-self: flex-end;
 }
 
 .message strong {
-  color: #007BFF;
+  color: var(--md-sys-color-error);
   font-size: 1rem;
   cursor: pointer;
 }
