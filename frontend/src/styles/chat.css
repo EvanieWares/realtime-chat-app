@@ -16,6 +16,7 @@
 .chat-box h1 {
   color: var(--md-sys-color-tertiary);
   padding: 20px;
+  min-height: 5%;
 }
 
 .message-container-wrapper {
@@ -46,9 +47,7 @@
 
 .message-input .message-input-box {
   width: 100%;
-  min-height: auto;
   line-height: 1.5rem;
-  max-height: 200px;
   resize: none;
   padding: 10px;
   box-sizing: border-box;
@@ -73,8 +72,26 @@
 }
 
 @media (width < 850px) {
+  .chat-box {
+    height: 100vh;
+  }
+
+  .chat-box h1 {
+    font-size: 1.5rem;
+  }
+
   .message-container-wrapper .message-container {
     width: 90vw;
-    min-width: 400px;
+    min-width: 350px;
+  }
+
+  .message-input .message-input-box {
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+
+  .message-input .send-icon {
+    font-size: 2rem;
+    margin: 10px 0 10px 10px;
   }
 }
