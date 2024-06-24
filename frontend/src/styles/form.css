@@ -27,11 +27,15 @@
   height: 100%;
   background: transparent;
   outline: none;
-  border: 2px solid gray;
+  border: 1px solid gray;
   border-radius: 40px;
   font-size: 16px;
   padding: 20px 20px 20px 45px;
   color: var(--md-sys-color-on-primary-container);
+}
+
+.error input {
+  border: 1px solid var(--md-sys-color-error);
 }
 
 .input-box input::placeholder {
@@ -65,6 +69,14 @@
   background: rgb(240, 240, 240);
 }
 
+.login-wrapper .error-message {
+  color: var(--md-sys-color-error);
+  font-size: 14px;
+  margin: 10px;
+  height: 20px;
+  text-align: center;
+}
+
 .login-wrapper .register-link {
   text-align: center;
   margin: 20px 0 15px 0;
@@ -79,4 +91,11 @@
 
 .register-link p a:hover {
   text-decoration: underline;
+}
+
+@media (width < 450px) {
+  .login-wrapper {
+    width: 90vw;
+    min-width: 350px;
+  }
 }
