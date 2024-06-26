@@ -1,5 +1,4 @@
-import { Server } from "socket.io";
-import Message from "../models/messageModel";
+import { Server } from 'socket.io';
 
 /**
  * Sets up a WebSocket server and listens for connections. When a connection
@@ -13,20 +12,15 @@ import Message from "../models/messageModel";
  * @return {void} This function does not return anything.
  */
 const setupWebSocket = (io: Server): void => {
-  io.on("connection", (socket) => {
-    console.log("a user connected");
+  io.on('connection', (socket) => {
+    console.log('a user connected');
 
-    socket.on("chat message", async (data) => {
-      const { user, message } = data;
-      const newMessage = new Message({ user, message });
-      await newMessage.save();
-      io.emit("chat message", newMessage);
+    socket.on('chat message', async (data) => {
+      io.emit('chat message', data);
     });
 
-    socket.on("disconnect", () => {
-      console.log("user disconnected");
-
-      socket.disconnect(true);
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
     });
   });
 };
