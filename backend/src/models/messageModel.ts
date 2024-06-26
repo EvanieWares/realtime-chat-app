@@ -1,4 +1,10 @@
-import { Schema, model } from "mongoose";
+import { Schema, Document, model } from "mongoose";
+
+interface IMessage extends Document {
+  user: string;
+  message: string;
+  timeStamp: Date;
+}
 
 const messageSchema = new Schema({
   user: { type: String, required: true },
@@ -6,4 +12,6 @@ const messageSchema = new Schema({
   timeStamp: { type: Date, default: Date.now },
 });
 
-export default model("Message", messageSchema);
+const Message = model<IMessage>("Message", messageSchema);
+
+export default Message;
