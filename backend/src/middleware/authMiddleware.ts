@@ -16,7 +16,7 @@ interface AuthRequest extends Request {
  *                sends a 401 status with an error message.
  */
 const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction): void => {
-  const token = req.header('x-auth-token');
+  const token = req.headers['authorization']?.split(' ')[1];
 
   if (!token) {
     res.status(401).json({ message: 'No token, authorization denied' });
