@@ -10,7 +10,7 @@ import Message from "../models/messageModel";
  */
 const getMessages = async (req: Request, res: Response): Promise<void> => {
   try {
-    const messages = await Message.find().sort({ timeStamp: -1 });
+    const messages = await Message.find().sort({ timeStamp: 1 });
     res.status(200).json(messages);
   } catch (err) {
     res.status(400).json({ error: "Failed to fetch messages" });
@@ -30,7 +30,7 @@ const postMessage = async (req: Request, res: Response): Promise<void> => {
   try {
     const newMessage = new Message({ user, message });
     await newMessage.save();
-    res.status(201).json({ message: "Message sent successfully" });
+    res.status(201).json(newMessage);
   } catch (err) {
     res.status(400).json({ error: "Failed to send message" });
   }
