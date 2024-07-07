@@ -23,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-username/realtime-chat-app.git
+    git clone https://github.com/EvanieWares/realtime-chat-app.git
     cd realtime-chat-app
     ```
 
